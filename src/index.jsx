@@ -1,10 +1,10 @@
 import api, { route } from "@forge/api";
 import ForgeUI, { render, Fragment, Text, IssuePanel, useProductContext, useState } from "@forge/ui";
 
-const fetchCommentsForIssue = async (issueIdOrKey) => {
+const fetchCommentsForIssue = async (issueId) => {
     const res = await api
-        .asUser() // inherits the product permissions of the user who has granted access to the app. This can cause different API responses between different users in the same app.
-        .requestJira(route`/rest/api/3/issue/${issueIdOrKey}/comment`);
+        .asUser()
+        .requestJira(route`/rest/api/3/issue/${issueId}/comment`);
 
     const data = await res.json();
     return data.comments;
@@ -18,6 +18,7 @@ const App = () => {
 
     return (
         <Fragment>
+            <Text>Hello world!</Text>
             <Text>
                 Number of comments on this issue: {comments.length}
             </Text>
