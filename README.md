@@ -35,3 +35,14 @@ forge tunnel
 ## Support
 
 See [Get help](https://developer.atlassian.com/platform/forge/get-help/) for how to get help and provide feedback.
+
+
+## etc.
+
+- `nvm install --lts=Erbium` - use the version of nodejs on which forge runs (otherwise `forge` command may not be available at all).
+- `forge lint --fix` - adds required scopes automatically to the manifest.yml file (e.g, read:jira-work). 
+  - Whenever we change permissions, we must upgrade the app's installation, do the following to comply:
+    - Stop the tunnel process
+    - `forge deploy`
+    - `forge install --upgrade`
+    - `forge tunnel`

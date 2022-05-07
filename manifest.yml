@@ -9,3 +9,12 @@ modules:
       handler: index.run
 app:
   id: ari:cloud:ecosystem::app/1043d7c5-4ee7-4190-84a3-8562faf312dd
+permissions:
+  scopes:
+    - read:comment:jira
+    - read:comment.property:jira
+    - read:group:jira
+    - read:project:jira
+    - read:project-role:jira
+    - read:user:jira
+    - read:avatar:jira
